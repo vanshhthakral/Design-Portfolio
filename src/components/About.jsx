@@ -27,15 +27,7 @@ export default function About() {
           <p className="section-label about__animate">01 — About</p>
           <h2 className="about__heading about__animate">About Me</h2>
           <div className="section-divider left about__animate" />
-          <div className="about__graphic about__animate">
-            <svg width="120" height="120" viewBox="0 0 120 120" fill="none" aria-hidden="true">
-              <circle cx="60" cy="60" r="59" stroke="#d4a89a" strokeWidth="0.8" strokeDasharray="4 8" />
-              <circle cx="60" cy="60" r="40" stroke="#e8dfd0" strokeWidth="0.8" />
-              <circle cx="60" cy="60" r="4" fill="#d4a89a" />
-              <line x1="60" y1="20" x2="60" y2="100" stroke="#e8dfd0" strokeWidth="0.6" />
-              <line x1="20" y1="60" x2="100" y2="60" stroke="#e8dfd0" strokeWidth="0.6" />
-            </svg>
-          </div>
+
         </div>
 
         {/* Right column */}

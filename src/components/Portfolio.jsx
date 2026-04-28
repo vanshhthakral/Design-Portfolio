@@ -9,7 +9,7 @@ const projects = [
     desc: 'A comprehensive brand strategy study for Ritu Kumar — exploring premium ethnic wear positioning, heritage storytelling, and cultural identity in the luxury fashion space.',
     image: '/images/ritu-kumar.jpg',
     tag: 'Brand Research',
-    link: '/projects/ritu-kumar'
+    link: 'https://www.behance.net/gallery/248394937/Ritu-Kumar-Brand-Study'
   },
   {
     id: 'nift-map',

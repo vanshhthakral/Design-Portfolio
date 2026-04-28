@@ -48,7 +48,7 @@ export default function Hero() {
 
           {/* CV Button (same style) */}
           <a
-            href="/cv/anshika-thakral-cv.pdf"
+            href="public/cv.pdf"
             className="hero__cta"
             id="hero-cv-btn"
             target="_blank"
@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="hero__image-wrap hero__animate">
         <div className="hero__image-frame">
           <img
-            src="/images/portraitt.jpeg
+            src="/images/portrait.PNG
             "
             alt="Anshika Thakral — Brand Strategy & Design Research"
             className="hero__portrait"

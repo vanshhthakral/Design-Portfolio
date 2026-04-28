@@ -5,25 +5,14 @@ const skillGroups = [
   {
     id: 'strategy',
     label: 'Strategy',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <circle cx="14" cy="14" r="13" stroke="#d4a89a" strokeWidth="1" />
-        <circle cx="14" cy="14" r="6" stroke="#d4a89a" strokeWidth="1" strokeDasharray="2 3" />
-        <circle cx="14" cy="14" r="2" fill="#d4a89a" />
-      </svg>
-    ),
+
     skills: ['Research', 'Problem Solving'],
     desc: 'Analytical thinking applied to brand challenges — identifying user needs and market gaps to drive meaningful strategy.',
   },
   {
     id: 'creative',
     label: 'Creative',
-    icon: (
-      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true">
-        <path d="M4 24 L14 4 L24 24" stroke="#d4a89a" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M8 17 h12" stroke="#d4a89a" strokeWidth="1" />
-      </svg>
-    ),
+
     skills: ['Visual Storytelling', 'Creative Thinking'],
     desc: 'Transforming complex ideas into compelling visual narratives — from  illustration to brand identity.',
   },
