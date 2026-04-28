@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 :root {
   /* Colors - Light Mode */
   --bg: #f9f6f1;
