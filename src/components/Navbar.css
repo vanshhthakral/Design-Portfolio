@@ -136,76 +136,76 @@
     height: 100vh;
     background: var(--bg);
     flex-direction: column;
-  width: 90px;
-  /* 👈 bigger */
-  height: 90px;
-  object-fit: contain;
-  /* 👈 important for logos */
-  display: block;
-}
+    width: 90px;
+    /* 👈 bigger */
+    height: 90px;
+    object-fit: contain;
+    /* 👈 important for logos */
+    display: block;
+  }
 
-/* Hover effect */
-.navbar__logo-img:hover {
-  transform: scale(1.08);
-}
+  /* Hover effect */
+  .navbar__logo-img:hover {
+    transform: scale(1.08);
+  }
 
-/* Optional subtle border (premium feel) */
+  /* Optional subtle border (premium feel) */
 
 
-.navbar__logo {
-  display: flex;
-  align-items: center;
-}
+  .navbar__logo {
+    display: flex;
+    align-items: center;
+  }
 
-.navbar {
-  position: fixed;
-  /* 👈 THIS IS THE MAIN FIX */
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-}
+  .navbar {
+    position: fixed;
+    /* 👈 THIS IS THE MAIN FIX */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
 
-.navbar {
-  transition: all 0.3s ease;
-}
+  .navbar {
+    transition: all 0.3s ease;
+  }
 
-.navbar--scrolled {
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-}
+  .navbar--scrolled {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+  }
 
-/* Navbar base */
-.navbar {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
+  /* Navbar base */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease, background 0.3s ease;
+  }
 
-/* Hide on scroll down */
-.navbar--hidden {
-  transform: translateY(-100%);
-}
+  /* Hide on scroll down */
+  .navbar--hidden {
+    transform: translateY(-100%);
+  }
 
-/* Optional: style when scrolled */
-.navbar--scrolled {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-}
+  /* Optional: style when scrolled */
+  .navbar--scrolled {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+  }
 
-.theme-toggle {
-  margin-left: 20px;
-  padding: 6px 10px;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  color: var(--text);
-  cursor: pointer;
-  transition: 0.3s;
-}
+  .theme-toggle {
+    margin-left: 20px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    transition: 0.3s;
+  }
 
-.theme-toggle:hover {
-  opacity: 0.8;
-}
+  .theme-toggle:hover {
+    opacity: 0.8;
+  }
