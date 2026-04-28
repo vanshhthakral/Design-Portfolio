@@ -65,7 +65,7 @@ export default function Hero() {
       <div className="hero__image-wrap hero__animate">
         <div className="hero__image-frame">
           <img
-            src="/images/portrait.PNG
+            src="/images/portrait.jpeg
             "
             alt="Anshika Thakral — Brand Strategy & Design Research"
             className="hero__portrait"
