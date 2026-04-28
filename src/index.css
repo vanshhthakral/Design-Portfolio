@@ -1,0 +1,139 @@
+/* =====================
+   DESIGN TOKENS
+   ===================== */
+:root {
+  --cream: #f9f6f1;
+  --cream-dark: #f0ebe2;
+  --beige: #e8dfd0;
+  --beige-light: #f4efe8;
+  --blush: #d4a89a;
+  --blush-light: #e8c4bc;
+  --charcoal: #1a1a1a;
+  --charcoal-mid: #2d2d2d;
+  --grey: #6b6b6b;
+  --grey-light: #9a9a9a;
+  --border: #e0d8ce;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', Helvetica, Arial, sans-serif;
+
+  --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+
+  --shadow-soft: 0 4px 24px rgba(26, 26, 26, 0.07);
+  --shadow-card: 0 8px 40px rgba(26, 26, 26, 0.1);
+  --shadow-hover: 0 16px 56px rgba(26, 26, 26, 0.14);
+}
+
+/* =====================
+   RESET
+   ===================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--cream);
+  color: var(--charcoal);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* =====================
+   TYPOGRAPHY
+   ===================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--charcoal);
+}
+
+p {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  color: var(--grey);
+}
+
+/* =====================
+   UTILITIES
+   ===================== */
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blush);
+}
+
+.section-divider {
+  width: 48px;
+  height: 1px;
+  background: var(--blush);
+  margin: 1.5rem auto;
+}
+
+.section-divider.left {
+  margin: 1.5rem 0;
+}
+
+/* Scroll fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(32px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--beige);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--blush);
+}
