@@ -61,14 +61,14 @@
 }
 
 .portfolio__card--wide .portfolio__card-img-wrap {
-  aspect-ratio: 16 / 7;
+  aspect-ratio: 16 / 9;
 }
 
 /* Image */
 .portfolio__card-img-wrap {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   background: var(--bg-offset);
   margin-bottom: 1.5rem;
