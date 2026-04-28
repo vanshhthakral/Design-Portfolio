@@ -48,7 +48,7 @@ export default function Hero() {
 
           {/* CV Button (same style) */}
           <a
-            href="public/cv.pdf"
+            href="cv.pdf"
             className="hero__cta"
             id="hero-cv-btn"
             target="_blank"
