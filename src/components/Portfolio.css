@@ -55,6 +55,15 @@
   transform: translateY(-10px);
 }
 
+/* Wide card (spans full row) */
+.portfolio__card--wide {
+  grid-column: 1 / -1;
+}
+
+.portfolio__card--wide .portfolio__card-img-wrap {
+  aspect-ratio: 16 / 7;
+}
+
 /* Image */
 .portfolio__card-img-wrap {
   position: relative;
