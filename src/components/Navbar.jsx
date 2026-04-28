@@ -8,7 +8,7 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ]
 
-export default function Navbar({ scrolled }) {
+export default function Navbar({ scrolled, dark, toggleTheme }) {
   const [menuOpen, setMenuOpen] = useState(false)
   const [showNavbar, setShowNavbar] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
@@ -16,9 +16,9 @@ export default function Navbar({ scrolled }) {
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 80) {
-        setShowNavbar(false) // scroll down → hide
+        setShowNavbar(false)
       } else {
-        setShowNavbar(true) // scroll up → show
+        setShowNavbar(true)
       }
       setLastScrollY(window.scrollY)
     }
@@ -31,46 +31,61 @@ export default function Navbar({ scrolled }) {
     <nav
       className={`navbar 
         ${scrolled ? 'navbar--scrolled' : ''} 
-        ${!showNavbar ? 'navbar--hidden' : ''}`
+        ${!showNavbar ? 'navbar--hidden' : ''}
+        ${menuOpen ? 'navbar--open' : ''}`
       }
-      role="navigation"
-      aria-label="Main navigation"
     >
-      {/* Logo */}
-      <a href="#hero" className="navbar__logo">
-        <img
-          src="/images/logp.png"
-          alt="Anshika Thakral"
-          className="navbar__logo-img"
-        />
-      </a>
+      <div className="navbar__container">
+        {/* Logo */}
+        <a href="#hero" className="navbar__logo">
+          <img
+            src="/images/logp.png"
+            alt="Anshika Thakral"
+            className="navbar__logo-img"
+          />
+        </a>
 
-      {/* Links */}
-      <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
-        {navLinks.map(link => (
-          <li key={link.label}>
-            <a
-              href={link.href}
-              className="navbar__link"
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
-      </ul>
+        {/* Desktop Links */}
+        <ul className={`navbar__links ${menuOpen ? 'navbar__links--mobile' : ''}`}>
+          {navLinks.map(link => (
+            <li key={link.label}>
+              <a
+                href={link.href}
+                className="navbar__link"
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-      {/* Mobile Menu Button */}
-      <button
-        className={`navbar__burger ${menuOpen ? 'navbar__burger--open' : ''}`}
-        onClick={() => setMenuOpen(v => !v)}
-        aria-label="Toggle menu"
-        aria-expanded={menuOpen}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
+        <div className="navbar__actions">
+          {/* Theme Toggle */}
+          <button 
+            onClick={toggleTheme} 
+            className="navbar__theme-toggle"
+            aria-label="Toggle dark mode"
+          >
+            {dark ? (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+            ) : (
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            )}
+          </button>
+
+          {/* Burger */}
+          <button
+            className={`navbar__burger ${menuOpen ? 'navbar__burger--open' : ''}`}
+            onClick={() => setMenuOpen(v => !v)}
+            aria-label="Toggle menu"
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
     </nav>
   )
 }

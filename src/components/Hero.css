@@ -8,9 +8,10 @@
   align-items: center;
   padding: 0 5%;
   padding-top: 80px;
-  background: var(--cream);
+  background: var(--bg);
   position: relative;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 /* Subtle background texture */
@@ -22,7 +23,8 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(212, 168, 154, 0.08) 0%, transparent 70%);
+  background: radial-gradient(circle, var(--accent-light) 0%, transparent 70%);
+  opacity: 0.15;
   pointer-events: none;
 }
 
@@ -53,7 +55,7 @@
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: var(--grey-light);
+  color: var(--text-dim);
   margin-bottom: 1.2rem;
 }
 
@@ -62,7 +64,7 @@
   font-size: clamp(3.5rem, 7vw, 6.5rem);
   font-weight: 500;
   line-height: 1.05;
-  color: var(--charcoal);
+  color: var(--text);
   margin-bottom: 1.4rem;
   letter-spacing: -0.01em;
 }
@@ -72,50 +74,63 @@
   font-size: 0.95rem;
   font-weight: 300;
   letter-spacing: 0.08em;
-  color: var(--grey);
+  color: var(--text-muted);
   margin-bottom: 2rem;
 }
 
 .hero__divider {
   width: 40px;
-  height: 1px;
-  background: var(--blush);
+  height: 2px;
+  background: var(--accent);
   margin-bottom: 2.5rem;
+}
+
+.hero__cta-group {
+  display: flex;
+  gap: 16px;
+  align-items: center;
 }
 
 .hero__cta {
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
+  padding: 1.1rem 2.2rem;
+  background: var(--text);
+  color: var(--bg);
   font-family: var(--font-sans);
   font-size: 0.8rem;
   font-weight: 500;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--cream);
-  background: var(--charcoal);
-  padding: 1rem 2rem;
-  border-radius: 2px;
+  border-radius: 4px;
   transition: var(--transition);
   align-self: flex-start;
   position: relative;
   overflow: hidden;
+  border: 1px solid transparent;
 }
 
-.hero__cta-group {
-  display: flex;
-  gap: 16px;
-  /* 👈 controls space between buttons */
-  align-items: center;
+.dark .hero__cta {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.dark .hero__cta:hover {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
 }
 
 .hero__cta::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: var(--blush);
+  background: var(--accent);
   transform: translateX(-100%);
   transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .hero__cta:hover::before {
@@ -123,8 +138,10 @@
 }
 
 .hero__cta:hover {
-  box-shadow: var(--shadow-card);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-2px);
 }
+
 
 .hero__cta span,
 .hero__cta-arrow {
@@ -158,6 +175,7 @@
   box-shadow: var(--shadow-card);
   transition: var(--transition-slow);
   position: relative;
+  background: var(--bg-offset);
 }
 
 .hero__image-frame::after {
@@ -165,8 +183,9 @@
   position: absolute;
   inset: 0;
   border-radius: 50%;
-  border: 8px solid var(--cream);
+  border: 8px solid var(--bg);
   pointer-events: none;
+  transition: var(--transition);
 }
 
 .hero__image-frame:hover {
@@ -179,7 +198,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  /* 👈 THIS centers the face */
+  transition: var(--transition-slow);
 }
 
 .hero__image-frame:hover .hero__portrait {
@@ -195,14 +214,14 @@
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--grey-light);
+  color: var(--text-dim);
 }
 
 .hero__image-dot {
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--blush);
+  background: var(--accent);
   display: inline-block;
 }
 
@@ -222,7 +241,7 @@
   display: block;
   width: 1px;
   height: 48px;
-  background: linear-gradient(to bottom, var(--blush), transparent);
+  background: linear-gradient(to bottom, var(--accent), transparent);
   animation: scrollPulse 2s ease-in-out infinite;
 }
 
@@ -232,7 +251,7 @@
   font-weight: 400;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--grey-light);
+  color: var(--text-dim);
   writing-mode: vertical-rl;
 }
 

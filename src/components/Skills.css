@@ -3,8 +3,9 @@
    ===================== */
 .skills {
   padding: 8rem 5%;
-  background: var(--cream);
+  background: var(--bg);
   position: relative;
+  transition: var(--transition);
 }
 
 .skills__inner {
@@ -21,13 +22,14 @@
 .skills__heading {
   font-size: 2.6rem;
   margin-top: 0.75rem;
-  color: var(--charcoal);
+  color: var(--text);
+  font-family: var(--font-serif);
 }
 
 .skills__sub {
   font-size: 0.95rem;
   font-weight: 300;
-  color: var(--grey-light);
+  color: var(--text-dim);
   margin-top: 0.5rem;
   letter-spacing: 0.05em;
 }
@@ -55,13 +57,14 @@
 
 /* Card */
 .skills__card {
-  background: var(--cream-dark);
+  background: var(--card);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 3rem 2.5rem;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-soft);
 }
 
 .skills__card::before {
@@ -71,7 +74,7 @@
   left: 0;
   height: 2px;
   width: 0;
-  background: var(--blush);
+  background: var(--accent);
   transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -82,7 +85,7 @@
 .skills__card:hover {
   box-shadow: var(--shadow-card);
   transform: translateY(-4px);
-  border-color: transparent;
+  border-color: var(--accent);
 }
 
 .skills__card-icon {
@@ -96,7 +99,7 @@
   font-weight: 600;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--blush);
+  color: var(--accent);
   margin-bottom: 1.2rem;
 }
 
@@ -114,14 +117,14 @@
   font-family: var(--font-serif);
   font-size: 1.4rem;
   font-weight: 400;
-  color: var(--charcoal);
+  color: var(--text);
 }
 
 .skills__item-dot {
-  width: 5px;
-  height: 5px;
+  width: 6px;
+  height: 6px;
   border-radius: 50%;
-  background: var(--blush);
+  background: var(--accent);
   flex-shrink: 0;
 }
 
@@ -129,7 +132,7 @@
   font-size: 0.88rem;
   font-weight: 300;
   line-height: 1.75;
-  color: var(--grey-light);
+  color: var(--text-muted);
   border-top: 1px solid var(--border);
   padding-top: 1.5rem;
   margin-top: 0.5rem;
@@ -149,7 +152,7 @@
   font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--grey);
+  color: var(--text-muted);
   border: 1px solid var(--border);
   padding: 0.55rem 1.2rem;
   border-radius: 100px;
@@ -157,9 +160,9 @@
 }
 
 .skills__strip-item:hover {
-  border-color: var(--blush);
-  color: var(--charcoal);
-  background: var(--beige-light);
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--bg-offset);
 }
 
 @media (max-width: 700px) {
@@ -167,3 +170,4 @@
     grid-template-columns: 1fr;
   }
 }
+

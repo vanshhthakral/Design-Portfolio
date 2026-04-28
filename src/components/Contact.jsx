@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import './Contact.css'
 
 const contactLinks = [
@@ -55,9 +56,7 @@ const contactLinks = [
 
 export default function Contact() {
   const sectionRef = useRef(null)
-  const [form, setForm] = useState({ name: '', email: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
-  const [sending, setSending] = useState(false)
+  const [state, handleSubmit] = useForm('mgorgwrv')
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,21 +72,6 @@ export default function Contact() {
     if (sectionRef.current) observer.observe(sectionRef.current)
     return () => observer.disconnect()
   }, [])
-
-  const handleChange = (e) => {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setSending(true)
-    // Simulate send — replace with real email API (EmailJS, Formspree, etc.)
-    setTimeout(() => {
-      setSending(false)
-      setSubmitted(true)
-      setForm({ name: '', email: '', message: '' })
-    }, 1200)
-  }
 
   return (
     <section id="contact" className="contact" ref={sectionRef}>
@@ -132,7 +116,7 @@ export default function Contact() {
             <p className="contact__form-sub">Drop me a note — I usually respond within 24 hours.</p>
           </div>
 
-          {submitted ? (
+          {state.succeeded ? (
             <div className="contact__success" role="alert">
               <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
                 <circle cx="16" cy="16" r="15" stroke="#d4a89a" strokeWidth="1.2" />
@@ -140,7 +124,10 @@ export default function Contact() {
               </svg>
               <h3 className="contact__success-title">Message sent!</h3>
               <p className="contact__success-body">Thank you for reaching out. I'll get back to you soon.</p>
-              <button className="contact__success-reset" onClick={() => setSubmitted(false)}>
+              <button 
+                className="contact__success-reset" 
+                onClick={() => window.location.reload()}
+              >
                 Send another
               </button>
             </div>
@@ -148,7 +135,6 @@ export default function Contact() {
             <form
               className="contact__form"
               onSubmit={handleSubmit}
-              noValidate
               id="contact-message-form"
             >
               <div className="contact__form-row">
@@ -160,10 +146,9 @@ export default function Contact() {
                     type="text"
                     className="contact__input"
                     placeholder="Your name"
-                    value={form.name}
-                    onChange={handleChange}
                     required
                   />
+                  <ValidationError prefix="Name" field="name" errors={state.errors} />
                 </div>
                 <div className="contact__field">
                   <label htmlFor="contact-email" className="contact__field-label">Email</label>
@@ -173,10 +158,9 @@ export default function Contact() {
                     type="email"
                     className="contact__input"
                     placeholder="your@email.com"
-                    value={form.email}
-                    onChange={handleChange}
                     required
                   />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
                 </div>
               </div>
 
@@ -188,19 +172,18 @@ export default function Contact() {
                   className="contact__textarea"
                   placeholder="Tell me about your project, collaboration idea, or just say hello..."
                   rows={5}
-                  value={form.message}
-                  onChange={handleChange}
                   required
                 />
+                <ValidationError prefix="Message" field="message" errors={state.errors} />
               </div>
 
               <button
                 type="submit"
                 id="contact-submit-btn"
-                className={`contact__submit ${sending ? 'contact__submit--sending' : ''}`}
-                disabled={sending}
+                className={`contact__submit ${state.submitting ? 'contact__submit--sending' : ''}`}
+                disabled={state.submitting}
               >
-                {sending ? (
+                {state.submitting ? (
                   <>
                     <span className="contact__spinner" />
                     Sending…
@@ -220,3 +203,4 @@ export default function Contact() {
     </section>
   )
 }
+

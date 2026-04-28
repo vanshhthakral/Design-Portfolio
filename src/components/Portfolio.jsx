@@ -5,7 +5,7 @@ const projects = [
   {
     id: 'ritu-kumar',
     title: 'Ritu Kumar',
-    subtitle: 'Brand Strategy',
+    subtitle: 'Brand Study',
     desc: 'A comprehensive brand strategy study for Ritu Kumar — exploring premium ethnic wear positioning, heritage storytelling, and cultural identity in the luxury fashion space.',
     image: '/images/ritu-kumar.jpg',
     tag: 'Brand Research',
@@ -76,14 +76,10 @@ export default function Portfolio() {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-
-              className={`portfolio__card portfolio__animate ${idx === 2 ? 'portfolio__card--wide' : ''
-
-                }`}
-
-
+              className={`portfolio__card portfolio__animate ${idx === 2 ? 'portfolio__card--wide' : ''}`}
               id={`project-${project.id}`}
             >
+
               <div className="portfolio__card-img-wrap">
                 <img
                   src={project.image}

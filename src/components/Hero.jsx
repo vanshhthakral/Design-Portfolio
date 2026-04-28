@@ -65,8 +65,8 @@ export default function Hero() {
       <div className="hero__image-wrap hero__animate">
         <div className="hero__image-frame">
           <img
-            src="/images/portrait.jpeg
-            "
+            src="/images/portrait.jpeg"
+
             alt="Anshika Thakral — Brand Strategy & Design Research"
             className="hero__portrait"
           />
@@ -82,7 +82,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="hero__scroll-hint">
         <span className="hero__scroll-line" />
-        <span className="hero__scroll-text">Scroll</span>
+
       </div>
     </section>
   )

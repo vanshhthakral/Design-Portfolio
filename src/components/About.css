@@ -3,9 +3,10 @@
    ===================== */
 .about {
   padding: 8rem 5%;
-  background: var(--cream-dark);
+  background: var(--bg);
   position: relative;
   overflow: hidden;
+  transition: var(--transition);
 }
 
 .about::before {
@@ -49,7 +50,8 @@
 .about__heading {
   font-size: 2.6rem;
   margin-top: 0.75rem;
-  color: var(--charcoal);
+  color: var(--text);
+  font-family: var(--font-serif);
 }
 
 .about__graphic {
@@ -69,7 +71,7 @@
   font-size: 1.05rem;
   font-weight: 300;
   line-height: 1.85;
-  color: var(--grey);
+  color: var(--text-muted);
 }
 
 /* Tags */
@@ -86,7 +88,7 @@
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--charcoal);
+  color: var(--text);
   border: 1px solid var(--border);
   padding: 0.45rem 1rem;
   border-radius: 100px;
@@ -94,9 +96,9 @@
 }
 
 .about__tag:hover {
-  border-color: var(--blush);
-  color: var(--blush);
-  background: var(--beige-light);
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--bg-offset);
 }
 
 /* Responsive */
@@ -120,3 +122,4 @@
     margin: 1.5rem auto;
   }
 }
+
